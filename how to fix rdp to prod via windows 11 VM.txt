@@ -1,0 +1,22 @@
+Windows Resource Protection (WinSFP) is blocking it. Here are the ways to bypass it:
+
+
+Replace mstscax.dll + mstsc.exe
+
+
+Once in Safe Mode, open CMD as Admin and run:
+
+cmdtakeown /f C:\Windows\System32\mstscax.dll /a
+
+icacls C:\Windows\System32\mstscax.dll /grant Administrators:F
+
+copy /y "C:\<folder_path>\mstscax.dll" C:\Windows\System32\
+
+
+same for mstsc:
+
+cmdtakeown /f C:\Windows\System32\mstsc.exe /a
+
+icacls C:\Windows\System32\mstsc.exe /grant Administrators:F
+
+copy /y "C:\<folder_path>\mstsc.exe" C:\Windows\System32\
